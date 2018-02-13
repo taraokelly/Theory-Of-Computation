@@ -4,12 +4,12 @@
 
 | State         | Input        | Write        | Move       | Next         |
 |:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
-| *q0*        | -               | -               | L               |  *__qa__*  |
-| *q0*        | 0              |  0              | R               | *__q0__*  |
-| *q0*        | 1              |  1              | R               | *__q1__*  |
-| *q1*        | -               | -               | L               |  *__qf__*  |
-| *q1*        | 0              |  0              | R               | *__q1__*  |
-| *q1*        | 1              |  1              | R               | *__q0__*  |
+| *q0*        | -               | -               | L               |  *qa*  |
+| *q0*        | 0              |  0              | R               | *q0*  |
+| *q0*        | 1              |  1              | R               | *q1*  |
+| *q1*        | -               | -               | L               |  *qf*  |
+| *q1*        | 0              |  0              | R               | *q1*  |
+| *q1*        | 1              |  1              | R               | *q0*  |
 
 Determine what happens when the Turing Machine is run with the following inputs initially on the tape.
 
@@ -23,7 +23,6 @@ Determine what happens when the Turing Machine is run with the following inputs 
 0 0 0 1(q1)
 
 ANS: fail
-
 ```
 
 **(b)** 0111
@@ -35,7 +34,6 @@ ANS: fail
  0 1 1 (q0)1
 
 ANS: fail
-
 ```
 
 **(c)** 0110
@@ -47,7 +45,6 @@ ANS: fail
  0 1 1 (q0)0
 
 ANS: pass
-
 ```
 
 **(d)** 0101010001
@@ -65,7 +62,6 @@ ANS: pass
  0 1 0 1 0 1 0 0 0 (q1)1
 
 ANS: pass
-
 ```
 
 **(e)** 0101010001
@@ -83,7 +79,6 @@ ANS: pass
  0 1 0 1 0 1 0 0 0 (q1)1
 
 ANS: pass
-
 ```
 
 **(f)** 00
@@ -93,17 +88,24 @@ ANS: pass
  0 (q0)0
 
 ANS: pass
-
 ```
 
 **(g)**
 
 ```
 ANS: pass
-
 ```
 
 ### 2. Give the state table for a Turing Machine that appends a parity bit to a tape with a string of consecutive 0's and 1's.
+
+| State         | Input        | Write        | Move       | Next         |
+|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
+| *q0*        | -               | 0               | R               |  *qa*  |
+| *q0*        | 0              |  0              | R               | *q0*  |
+| *q0*        | 1              |  1              | R               | *q1*  |
+| *q1*        | -               | 1               | R               |  *qa*  |
+| *q1*        | 0              |  0              | R               | *q1*  |
+| *q1*        | 1              |  1              | R               | *q0*  |
 
 ### 3. Construct a Turing Machine to compute the sequence 0 - 1 - 0 - 1 - 0 - ..., that is, 0 blank 1 blank 0 blank, etc [1].
 
