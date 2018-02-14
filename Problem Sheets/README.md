@@ -1,6 +1,6 @@
 # Problem Sheets
 
-Problem Sheets assisting the learning of the module [Theory of Algorithms](https://github.com/theory-of-algorithms/).
+Exercises assisting the learning of the module [Theory of Algorithms](https://github.com/theory-of-algorithms/). The problem sheets do not contribute to the overall grade.
 
 ## Contents
 

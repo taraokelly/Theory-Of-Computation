@@ -8,3 +8,7 @@ CA and Problem Sheets assigned to expedite the learning of the Theory of Computa
 + Turing Machines
 + Computational complexity
 + NP completeness
+
+-----
+
+__*Tara O'Kelly - G00322214@gmit.ie*__
