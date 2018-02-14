@@ -4,7 +4,7 @@ Problem Sheets assisting the learning of the module [Theory of Algorithms](https
 
 ## Contents
 
-+ [Turning Machines](/Turning%20Machines)
++ [Turning Machines](https://github.com/taraokelly/Theory-Of-Computation/tree/master/Problem%20Sheets/Turning%20Machines)
 
 -----
 
