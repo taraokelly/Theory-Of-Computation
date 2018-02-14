@@ -100,12 +100,12 @@ ANS: pass
 
 ```
 s 	r 	w 	m 	n
-q0	-	0	R 	qa
-q0	0	0   R   q0
-q0	1	1   R   q1
-q1	- 	1   R   qa
-q1	0   0   R   q1
-q1	1   1   R   q0
+q0	-	0	r	qa
+q0	0	0	r	q0
+q0	1	1	r	q1
+q0	-	1	r	qa
+q0	0	0	r	q0
+q0	1	1	r	q1
 ```
 
 ### 3. Construct a Turing Machine to compute the sequence 0 - 1 - 0 - 1 - 0 - ..., that is, 0 blank 1 blank 0 blank, etc [1].
