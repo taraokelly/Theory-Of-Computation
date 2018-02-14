@@ -129,7 +129,13 @@ q3	1	-	r	q0
 ### 4. Give the state table for a Turing Machine that multiplies a string of consecutive 0's and 1's by 2. The machine should treat the initial contents of the tape as a natural number written in binary form, with the least significant bit at the end. That is, if the contents of the tape are 01101, then the right-most 1 represents the number 1, the middle 1 represents the number 4 and the left-most 1 represents the number 8. Then the number on the tape is 8 + 4 + 1 = 13.
 
 ```
-Odd binary numbers end in 1 and even binary numbers always end in 0. Since any number divisible by 2 will always be even, the result of the turing machine algorithm will therefore always end in zero. Building on this knowledge, we noticed from examining a conversion table of decimal to binary that any number multiplied by 2 is the same binary number with another zero appended to the end, i.e. (1)2 * (2)10 = (10)2, (111)2 * (2)10 = (1110)2, (111100)2 * (2)10 = (1111000)2
+Odd binary numbers end in 1 and even binary numbers always end in 0. 
+Since any number divisible by 2 will always be even, the result of 
+the turing machine algorithm will therefore always end in zero. 
+Building on this knowledge, we noticed from examining a conversion 
+table of decimal to binary that any number multiplied by 2 is the same 
+binary number with another zero appended to the end
+- i.e. (1)2 * (2)10 = (10)2, (111)2 * (2)10 = (1110)2, (111100)2 * (2)10 = (1111000)2
 
 s 	r 	w 	m 	n
 q0	-	0	r	qa
