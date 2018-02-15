@@ -197,8 +197,22 @@ q3	1	1	r	q3
 ### 8. List all words of length at most three in Σ∗ where Σ is: 
 
 **(a)** {0, 1}
+
+```
+Σ, 0, 1, 00, 01, 10, 11, 001, 010, 011, 100, 101, 110, 111
+```
+
 **(b)** {a, b, c}
+
+```
+Σ, a, b, c, aa, ab, ba, bb, cc, cb, bc, ac, ca, aaa, bbb, ccc, aab, aac, aba, aca, abb, acc, abc, acb, bba, bbc, baa, bcc, bac, bca, caa, cbb, cab, cba 
+```
+
 **(c)** {}
+
+```
+Σ
+```
 
 ### 9. Design a Turing machine to recognise the language {0^n1^n | n ≥ 0}.
 
