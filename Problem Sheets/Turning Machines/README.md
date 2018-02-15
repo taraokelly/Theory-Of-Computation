@@ -159,7 +159,9 @@ q1	1	1	r	q1
 ### 6. Give the state table for a Turing Machine that adds 1 to a string of consecutive 0’s and 1’s, where the least significant digit is on the right of the input.
 
 ```
-Assuming, like the questions above, that the numbers are to be read from right to left - like 01101 is to be read as 8 + 4 + 1 = 13. Therefore, this algorithm should take the input 01101 and produce the result like so 8 + 4 + 1 + 1 = 14.
+Assuming, like the questions above, that the numbers are to be read from right to left 
+- like 01101 is to be read as 8 + 4 + 1 = 13. Therefore, this algorithm should take the 
+input 01101 and produce the result like so 8 + 4 + 1 + 1 = 14.
 
 s 	r 	w 	m 	n
 q0	-	-	l	q1
@@ -177,7 +179,9 @@ q2	1	1	r	q2
 ### 7. Give the state table for a Turing Machine that subtracts 1 to a string of consecutive 0’s and 1’s, where the least significant digit is on the right of the input.
 
 ```
-Assuming, like the questions above, that the numbers are to be read from right to left - like 01101 is to be read as 8 + 4 + 1 = 13. Therefore, this algorithm should take the input 01101 and produce 8 + 4 + 1 - 1 = 12.
+Assuming, like the questions above, that the numbers are to be read from right to left 
+- like 01101 is to be read as 8 + 4 + 1 = 13. Therefore, this algorithm should take the 
+input 01101 and produce 8 + 4 + 1 - 1 = 12.
 
 s 	r 	w 	m 	n
 q0	-	-	l	q1
