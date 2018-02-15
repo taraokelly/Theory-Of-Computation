@@ -135,7 +135,8 @@ the turing machine algorithm will therefore always end in zero.
 Building on this knowledge, we noticed from examining a conversion 
 table of decimal to binary that any number multiplied by 2 is the same 
 binary number with another zero appended to the end
-- i.e. (1)2 * (2)10 = (10)2, (111)2 * (2)10 = (1110)2, (111100)2 * (2)10 = (1111000)2
+- i.e. with (x)2 -> notation for binary and (x)10 notation for decimal:
+(1)2 * (2)10 = (10)2, (111)2 * (2)10 = (1110)2, (111100)2 * (2)10 = (1111000)2.
 
 s 	r 	w 	m 	n
 q0	-	0	r	qa
@@ -156,6 +157,54 @@ q1	1	1	r	q1
 ```
 
 ### 6. Give the state table for a Turing Machine that adds 1 to a string of consecutive 0’s and 1’s, where the least significant digit is on the right of the input.
+
+```
+Assuming, like the questions above, that the numbers are to be read from right to left - like 01101 is to be read as 8 + 4 + 1 = 13. Therefore, this algorithm should take the input 01101 and produce the result like so 8 + 4 + 1 + 1 = 14.
+
+s 	r 	w 	m 	n
+q0	-	-	l	q1
+q0	0	0	r	q0
+q0	1	1	r	q0
+q1	-	1	r	q2
+q1	0	1	r	q2
+q1	1	0	l	q1
+q2	-	-	r	qa
+q2	0	0	r	q2
+q2	1	1	r	q2
+
+```
+
+### 7. Give the state table for a Turing Machine that subtracts 1 to a string of consecutive 0’s and 1’s, where the least significant digit is on the right of the input.
+
+```
+Assuming, like the questions above, that the numbers are to be read from right to left - like 01101 is to be read as 8 + 4 + 1 = 13. Therefore, this algorithm should take the input 01101 and produce 8 + 4 + 1 - 1 = 12.
+
+s 	r 	w 	m 	n
+q0	-	-	l	q1
+q0	0	0	r	q0
+q0	1	1	r	q0
+q1	-	-	r	q3
+q1	0	0	l	q1
+q1	1	0	r	q2
+q2	-	-	r	qa
+q2	0	1	r	q2
+q2	1	1	r	q2
+q3	-	-	r	qa
+q3	0	0	r	q3
+q3	1	1	r	q3
+```
+
+### 8. List all words of length at most three in Σ∗ where Σ is: 
+
+**(a)** {0, 1}
+**(b)** {a, b, c}
+**(c)** {}
+
+### 9. Design a Turing machine to recognise the language {0^n1^n | n ≥ 0}.
+
+### 10. Design a Turing machine to recognise the language {ww^R | w ∈ {0, 1}∗} where w R is w reversed. For example, when w = 101011 then w^R = 110101.
+
+### 11. Design a Turing machine to recognise the language {(a^i)(b^j)(c^k)| i, j, k ∈ N0}
 
 -----
 
