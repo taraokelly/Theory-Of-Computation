@@ -5,6 +5,7 @@ Exercises assisting the learning of the module [Theory of Algorithms](https://gi
 ## Contents
 
 + [Turning Machines](https://github.com/taraokelly/Theory-Of-Computation/tree/master/Problem%20Sheets/Turning%20Machines)
++ [Racket](https://github.com/taraokelly/Theory-Of-Computation/tree/master/Problem%20Sheets/Racket)
 
 -----
 
