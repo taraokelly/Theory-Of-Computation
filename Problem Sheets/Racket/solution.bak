@@ -6,7 +6,6 @@ Tara O'Kelly, G00322214
 Theory of Algorithms, Software Development, Fourth Year, GMIT.
 |#
 
-
 ; Q.1)
 
 ; (a) (3 × (5 + (10 ÷ 5)))
@@ -26,12 +25,3 @@ Theory of Algorithms, Software Development, Fourth Year, GMIT.
 
 ; (f) (3 + 5) × (10 ÷ 2) + (1 + (5 + (2 + (10 ÷ 3))))
 (+ (* (+ 3 5) (/ 10 2)) (+ 1 (+ 5 (+ 2 (/ 10 3)))))
-
-
-; Q.2)
-
-; Convert the discount to a percentage, and multiply by the full price.
-(define (discount a b) (* a (/ b 100.0)))
-; Test:
-(discount 10 5)
-(discount 29.90 50)

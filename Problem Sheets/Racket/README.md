@@ -39,13 +39,17 @@ The following exercises are related to the Racket programming language [3].
 (+ (* (+ 3 5) (/ 10 2)) (+ 1 (+ 5 (+ 2 (/ 10 3)))))
 ```
 
-### 2. Define a procedure discount that takes two arguments: an item’s initial price and a percentage discount [2]. It should return the new price:
+### 2. Define a procedure "discount" that takes two arguments: an item’s initial price and a percentage discount [2]. It should return the new price:
 
 > (discount 10 5)
 9.50
 
 > (discount 29.90 50)
 14.95
+
+```racket
+(define (discount a b) (* a (/ b 100.0)))
+```
 
 ### 3. Define a function grcomdiv that takes two integers and returns their greatest common divisor.
 
