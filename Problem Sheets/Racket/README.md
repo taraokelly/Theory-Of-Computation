@@ -5,11 +5,15 @@ The following exercises are related to the Racket programming language [3].
 
 **(a)** (3 × (5 + (10 ÷ 5)))
 
+*ans:*
+
 ```racket
 (* 3 (+ 5 (/ 10 5)))
 ```
 
 **(b)** (2 + 3 + 4 + 5)
+
+*ans:*
 
 ```racket
 (+ 2 3 4 5)
@@ -17,23 +21,35 @@ The following exercises are related to the Racket programming language [3].
 
 **(c)** (1 + (5 + (2 + (10 ÷ 3))))
 
+*ans:*
+
 ```racket
 (+ 1 (+ 5 (+ 2 (/ 10 3))))
 ```
 
+*ans:*
+
 **(d)** (1 + (5 + (2 + (10 ÷ 3.0))))
+
+*ans:*
 
 ```racket
 (+ 1 (+ 5 (+ 2 (/ 10 3.0))))
 ```
 
+*ans:*
+
 **(e)** (3 + 5) × (10 ÷ 2)
+
+*ans:*
 
 ```racket
 (* (+ 3 5) (/ 10 2))
 ```
 
 **(f)** (3 + 5) × (10 ÷ 2) + (1 + (5 + (2 + (10 ÷ 3))))
+
+*ans:*
 
 ```racket
 (+ (* (+ 3 5) (/ 10 2)) (+ 1 (+ 5 (+ 2 (/ 10 3)))))
@@ -47,6 +63,8 @@ The following exercises are related to the Racket programming language [3].
 > (discount 29.90 50)
 14.95
 
+*ans:*
+
 ```racket
 ; Convert the discount to a percentage, and multiply by the full price.
 (define (discount a b) (* a (/ b 100.0)))
@@ -56,8 +74,11 @@ The following exercises are related to the Racket programming language [3].
 
 > (grcomdiv 10 15)
 5
+
 > (grcomdiv 64 30)
 2
+
+*ans:*
 
 ```racket
 ; Euclid's Algorithm
