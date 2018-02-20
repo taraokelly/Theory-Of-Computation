@@ -35,3 +35,19 @@ Theory of Algorithms, Software Development, Fourth Year, GMIT.
 ; Test:
 (discount 10 5)
 (discount 29.90 50)
+
+; Q.3)
+
+; Euclid's Algorithm
+(define (grcomdiv a b)
+  (if (< a b)
+      (grcomdiv b a)
+      (if (= b 0)
+          a
+          (grcomdiv (modulo a b) b)
+        )
+    )
+)
+;Test:
+(grcomdiv 10 15)
+(grcomdiv 64 30)

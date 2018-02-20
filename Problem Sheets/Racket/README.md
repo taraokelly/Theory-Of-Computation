@@ -48,6 +48,7 @@ The following exercises are related to the Racket programming language [3].
 14.95
 
 ```racket
+; Convert the discount to a percentage, and multiply by the full price.
 (define (discount a b) (* a (/ b 100.0)))
 ```
 
@@ -57,6 +58,19 @@ The following exercises are related to the Racket programming language [3].
 5
 > (grcomdiv 64 30)
 2
+
+```racket
+; Euclid's Algorithm
+(define (grcomdiv a b)
+  (if (< a b)
+      (grcomdiv b a)
+      (if (= b 0)
+          a
+          (grcomdiv (modulo a b) b)
+        )
+    )
+)
+```
 
 ### 4. Write a function called appearances that returns the number of times its first argument appears as a member of its second argument [2].
 
