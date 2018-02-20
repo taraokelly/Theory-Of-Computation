@@ -3,45 +3,41 @@
 The following exercises are related to the Racket programming language [3].
 ### 1. Re-write the following expressions in Racket and evaluate them using a Racket interpreter/compiler.
 
-(a) (3 × (5 + (10 ÷ 5)))
+**(a)** (3 × (5 + (10 ÷ 5)))
 
-**_Ans:_**
+**_ANS:_**
 
 ```racket
 (* 3 (+ 5 (/ 10 5)))
 ```
 
-(b) (2 + 3 + 4 + 5)
+**(b)** (2 + 3 + 4 + 5)
 
-**_Ans:_**
+**_ANS:_**
 
 ```racket
 (+ 2 3 4 5)
 ```
 
-(c) (1 + (5 + (2 + (10 ÷ 3))))
+**(c)** (1 + (5 + (2 + (10 ÷ 3))))
 
-**_Ans:_**
+**_ANS:_**
 
 ```racket
 (+ 1 (+ 5 (+ 2 (/ 10 3))))
 ```
 
-**_Ans:_**
+**(d)** (1 + (5 + (2 + (10 ÷ 3.0))))
 
-(d) (1 + (5 + (2 + (10 ÷ 3.0))))
-
-**_Ans:_**
+**_ANS:_**
 
 ```racket
 (+ 1 (+ 5 (+ 2 (/ 10 3.0))))
 ```
 
-**_Ans:_**
+**(e)** (3 + 5) × (10 ÷ 2)
 
-(e) (3 + 5) × (10 ÷ 2)
-
-**_Ans:_**
+**_ANS:_**
 
 ```racket
 (* (+ 3 5) (/ 10 2))
@@ -49,7 +45,7 @@ The following exercises are related to the Racket programming language [3].
 
 **(f)** (3 + 5) × (10 ÷ 2) + (1 + (5 + (2 + (10 ÷ 3))))
 
-**_Ans:_**
+**_ANS:_**
 
 ```racket
 (+ (* (+ 3 5) (/ 10 2)) (+ 1 (+ 5 (+ 2 (/ 10 3)))))
@@ -63,7 +59,7 @@ The following exercises are related to the Racket programming language [3].
 > (discount 29.90 50)
 14.95
 
-**_Ans:_**
+**_ANS:_**
 
 ```racket
 ; Convert the discount to a percentage, and multiply by the full price.
@@ -78,7 +74,7 @@ The following exercises are related to the Racket programming language [3].
 > (grcomdiv 64 30)
 2
 
-**_Ans:_**
+**_ANS:_**
 
 ```racket
 ; Euclid's Algorithm
