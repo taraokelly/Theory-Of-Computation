@@ -5,15 +5,39 @@ The following exercises are related to the Racket programming language [3].
 
 **(a)** (3 × (5 + (10 ÷ 5)))
 
+```racket
+(* 3 (+ 5 (/ 10 5)))
+```
+
 **(b)** (2 + 3 + 4 + 5)
+
+```racket
+(+ 2 3 4 5)
+```
 
 **(c)** (1 + (5 + (2 + (10 ÷ 3))))
 
+```racket
+(+ 1 (+ 5 (+ 2 (/ 10 3))))
+```
+
 **(d)** (1 + (5 + (2 + (10 ÷ 3.0))))
+
+```racket
+(+ 1 (+ 5 (+ 2 (/ 10 3.0))))
+```
 
 **(e)** (3 + 5) × (10 ÷ 2)
 
+```racket
+(* (+ 3 5) (/ 10 2))
+```
+
 **(f)** (3 + 5) × (10 ÷ 2) + (1 + (5 + (2 + (10 ÷ 3))))
+
+```racket
+(+ (* (+ 3 5) (/ 10 2)) (+ 1 (+ 5 (+ 2 (/ 10 3)))))
+```
 
 ### 2. Define a procedure discount that takes two arguments: an item’s initial price and a percentage discount [2]. It should return the new price:
 
