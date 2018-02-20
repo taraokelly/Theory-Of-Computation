@@ -38,7 +38,7 @@ The following exercises are related to the Racket programming language [3].
 
 ### 7. Here is a Racket procedure that never finishes its job when n is not 0:
 
-```
+```racket
 (define (forever n)
     (if (= n 0)
         1
