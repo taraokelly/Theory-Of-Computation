@@ -1,55 +1,20 @@
 # Problem Sheet: Racket
 
 The following exercises are related to the Racket programming language [3].
+
 ### 1. Re-write the following expressions in Racket and evaluate them using a Racket interpreter/compiler.
 
 **(a)** (3 × (5 + (10 ÷ 5)))
 
-**_ANS:_**
-
-```racket
-(* 3 (+ 5 (/ 10 5)))
-```
-
 **(b)** (2 + 3 + 4 + 5)
-
-**_ANS:_**
-
-```racket
-(+ 2 3 4 5)
-```
 
 **(c)** (1 + (5 + (2 + (10 ÷ 3))))
 
-**_ANS:_**
-
-```racket
-(+ 1 (+ 5 (+ 2 (/ 10 3))))
-```
-
 **(d)** (1 + (5 + (2 + (10 ÷ 3.0))))
-
-**_ANS:_**
-
-```racket
-(+ 1 (+ 5 (+ 2 (/ 10 3.0))))
-```
 
 **(e)** (3 + 5) × (10 ÷ 2)
 
-**_ANS:_**
-
-```racket
-(* (+ 3 5) (/ 10 2))
-```
-
 **(f)** (3 + 5) × (10 ÷ 2) + (1 + (5 + (2 + (10 ÷ 3))))
-
-**_ANS:_**
-
-```racket
-(+ (* (+ 3 5) (/ 10 2)) (+ 1 (+ 5 (+ 2 (/ 10 3)))))
-```
 
 ### 2. Define a procedure "discount" that takes two arguments: an item’s initial price and a percentage discount [2]. It should return the new price:
 
@@ -59,13 +24,6 @@ The following exercises are related to the Racket programming language [3].
 > (discount 29.90 50)
 14.95
 
-**_ANS:_**
-
-```racket
-; Convert the discount to a percentage, and multiply by the full price.
-(define (discount a b) (* a (/ b 100.0)))
-```
-
 ### 3. Define a function grcomdiv that takes two integers and returns their greatest common divisor.
 
 > (grcomdiv 10 15)
@@ -73,21 +31,6 @@ The following exercises are related to the Racket programming language [3].
 
 > (grcomdiv 64 30)
 2
-
-**_ANS:_**
-
-```racket
-; Euclid's Algorithm
-(define (grcomdiv a b)
-  (if (< a b)
-      (grcomdiv b a)
-      (if (= b 0)
-          a
-          (grcomdiv (modulo a b) b)
-        )
-    )
-)
-```
 
 ### 4. Write a function called appearances that returns the number of times its first argument appears as a member of its second argument [2].
 
