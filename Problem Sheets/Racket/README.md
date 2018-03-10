@@ -91,6 +91,10 @@ The following exercises are related to the Racket programming language [3].
 
 ### 4. Write a function called appearances that returns the number of times its first argument appears as a member of its second argument [2].
 
+```
+
+```
+
 ### 5. Write a procedure inter that takes two lists as arguments. It should return a list containing every element that appears in both lists, exactly once.
 
 ### 6. Write a procedure noatoms that takes a list and returns the number of atoms it contains.

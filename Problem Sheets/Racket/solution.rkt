@@ -51,3 +51,24 @@ Theory of Algorithms, Software Development, Fourth Year, GMIT.
 ;Test:
 (grcomdiv 10 15)
 (grcomdiv 64 30)
+
+; Q.4)
+
+#;(define (appearances a b)
+  (for ([e (in-list b)])
+    (displayln e)
+    )
+  )
+
+(define (appearances a b)
+  (if (null? b)
+      0
+      (if (= a (car b))
+          0
+          1
+          )
+      )
+  )
+
+(appearances 1 (list 9 2 3))
+
