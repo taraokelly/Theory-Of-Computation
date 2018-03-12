@@ -17,10 +17,10 @@ Call the function decide-prime.
 #| 
 Breaking this task down and examining what has to be done, it is to be noted that a "brute-force" 
 algorithm is greedy exhaustive. In this case, every positive number less than the positive number 
-n should be checked to see if they are factors of n. If they are factors of n, then n must not be 
-a prime number. This is because a prime number is a number where it's component factors can only 
-consist of itself(n) and 1. Since it is only every number less than n being evaluated, n is never 
-included in the combinations and n * 1 isn't checked. Every combination is to be checked until 
+n should be checked to see if it is a factor of n. If it is, then n must not be a prime number. 
+This is because a prime number is a number where it's component factors can only consist of 
+itself(n) and 1. Since it is only every number less than n being evaluated, n itself is never 
+checked. The number 1 must also be excluded from the search. Every number is to be checked until 
 the answer is found.
 |#
 
