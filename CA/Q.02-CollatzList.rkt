@@ -14,7 +14,7 @@ and returns a list by recursively applying the following operation, starting wit
 input number.
 
 ni+1 =
-    3ni + 1 - if n base i is odd
+    3ni + 1 - if ni is odd
     ni ÷ 2 - otherwise
 
 End the recursion when (or if) the number becomes 1. Call the function collatz-list.
