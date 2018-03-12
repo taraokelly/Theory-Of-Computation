@@ -25,22 +25,22 @@ the answer is found.
 |#
 
 (define (decide-prime n)
+      (define (prime-loop n m)
+      ; Check if m is equal to n - m acts as a counter, starting from 2 -> n.
+      ; If m has reached n without finding a component factor of n and returning false, n must be a prime number.
+      (if (= m n)
+          #t
+          ; If the modulus is equal to 0 then, m divides equally into n and therfore must be a factor of n.  
+          (if (= (modulo n m) 0)
+              #f
+              ; Use recursion to create a loop, while also incrementing the counter.
+              (prime-loop n (+ m 1)))))
       ; Check if positive number. 0 and 1 cannot be primes.
       (if (< n 2) 
         #f
         ; Counter starts at 2 - 0 and 1 don't need to be checked, and 1 will disrupt the results.
         (prime-loop n 2)))
 
-(define (prime-loop n m)
-  ; Check if m is equal to n - m acts as a counter, starting from 2 -> n.
-  ; If m has reached n without finding a component factor of n and returning false, n must be a prime number.
-   (if (= m n)
-      #t
-      ; If the modulus is equal to 0 then, m divides equally into n and therfore must be a factor of n.  
-      (if (= (modulo n m) 0)
-          #f
-          ; Use recursion to create a loop, while also incrementing the counter.
-          (prime-loop n (+ m 1)))))
 
 ; Tester function.
 (define (test m n)
