@@ -41,7 +41,6 @@ the answer is found.
         ; Counter starts at 2 - 0 and 1 don't need to be checked, and 1 will disrupt the results.
         (prime-loop n 2)))
 
-
 ; Tester function.
 (define (test m n)
   (if (equal? m n)

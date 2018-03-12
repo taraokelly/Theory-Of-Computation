@@ -1,3 +1,5 @@
+#lang racket
+
 #|
 CA: 30%
 Tara O'Kelly, G00322214
@@ -17,8 +19,31 @@ For example:
 '(5 1 2 3 4)
 |#
 
+#|
+To create the lcycle function - the first digit can easily be separated using car and the
+rest can also be separated using cdr.
+First lcycle Attempt - works but method uses append.
+
 (define (lcycle n)
-    (display n)
+    (define (lcycle-flatten lst)
+    (cond ((null? lst) '())
+            ((pair? lst)
+            (append (lcycle-flatten (car lst)) (lcycle-flatten (cdr lst))))
+            (else (list lst))))
+    (lcycle-flatten (cons (cdr n) (cons (car n) '())))
+)
+
+Upon using the attempting to combine the pair (tail,head) using one cons operation, it
+became apparent that a recursive loop was required to build the single merged list.
+
+|#
+
+(define (lcycle n)
+    (define (lcycle-build n a)
+        (if (null? n)
+            (cons a '())
+            (cons (car n) (lcycle-build (cdr n) a))))
+    (lcycle-build (cdr n) (car n))
 )
 
 (define (rcycle n)
@@ -32,3 +57,5 @@ For example:
     #f
     )
 )
+
+(test (lcycle (list 1 2 3 4 5)) '(2 3 4 5 1))
