@@ -45,6 +45,9 @@ Seems like a better solution but will only work on a binary string:
         (else (hamming-weight-calc (cdr n) (+ c (car n))))))
     (hamming-weight-calc n 0))
 
+Works by adding the number itself to the counter each iteration. Will either better
+1 or 0.
+
 The question says to "return the number of non-zero elements" and doesn't specify 
 anything about binary but only uses binary in the example.
 |#
