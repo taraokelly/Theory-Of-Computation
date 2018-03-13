@@ -35,6 +35,20 @@ cdr of n and the incremented counter
         (else (hamming-weight-calc (cdr n) (+ c 1)))))
     (hamming-weight-calc n 0))
 
+#|
+Seems like a better solution but will only work on a binary string: 
+
+(define (hamming-weight n)
+    (define (hamming-weight-calc n c)
+    (cond
+        ((null? n) c)
+        (else (hamming-weight-calc (cdr n) (+ c (car n))))))
+    (hamming-weight-calc n 0))
+
+The question says to "return the number of non-zero elements" and doesn't specify 
+anything about binary but only uses binary in the example.
+|#
+
 (test (hamming-weight (list 1 0 1 0 1 1 1 0)) 5)
 (test (hamming-weight (list 0 0 0 0)) 0)
 (test (hamming-weight (list 1 2 3 4 5)) 5)
