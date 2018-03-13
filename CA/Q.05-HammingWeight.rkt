@@ -19,7 +19,6 @@ the number of non-zero elements in it. For example:
 #|
 Similar to the last task a loop is required that holds a counter instead of a result 
 list. Plan to use cond with three conditions:
-
 1. if arg1(input list) is null - then return counter (arg2) 
 2. if the first number is zero - use recursion to continue the loop passing in the 
 cdr of n and the unchanged counter
