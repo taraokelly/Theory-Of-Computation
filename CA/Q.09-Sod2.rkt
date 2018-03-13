@@ -20,7 +20,7 @@ For example:
 
 #| 
 Implemented similarily to the last two tasks, the sod2 function uses different logic in 
-it's if statement. It checks if the sum of the nth number of x, y and z is divisible by 
+its if statement. It checks if the sum of the nth number of x, y and z is divisible by 
 2. If it is, the answer must be even, and 0 is mapped to the nth spot in the resulting 
 list. If it is not divisible by 2, the answer must be odd, and 1 is mapped to the nth 
 spot in the resulting list.  
