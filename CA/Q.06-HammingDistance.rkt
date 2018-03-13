@@ -18,22 +18,26 @@ number of positions in which they differ. For example:
 
 #|
 Again similar to the last question - a loop with copies of the input and a counter 
-is used. The counter or distance will be incremented if the first number of each list 
-is the same. 
+is used. The counter or distance will be incremented if the first number of each 
+list is the same. Using cond again:
+1. Both lists are null - return d (distance) if both are null.
+2. Arg1(list 1) null - recursion while passing in cdr of non-null list arg2 and 
+incremented arg3(d).
+3. Arg2(list 2) null - recursion while passing in cdr of non-null list arg1 and 
+incremented arg3(d).
+4. Car of both lists are the same - recursion while passing in cdr of both and 
+don't increment arg3(d).
+5. Else - mustn't be the same so recursion while passing in cdr of both and 
+incremented arg3(d).
 |#
 
 (define (hamming-distance n m)
     (define (hamming-distance-calc n m d)
     (cond
-        ; return d (distance) if both are null
         ((and (null? n) (null? m)) d)
-        ; recursion while passing in cdr of non-null list m and incremented d
         ((null? n) (hamming-distance-calc n (cdr m) (+ d 1)))
-        ; recursion while passing in cdr of non-null list n and incremented d
         ((null? m) (hamming-distance-calc (cdr n) m (+ d 1)))
-        ; they are the same so recursion while passing in cdr of both and don't increment d
         ((= (car n) (car m)) (hamming-distance-calc (cdr n) (cdr m) d))
-        ; they aren't the same so recursion while passing in cdr of both and incremented d
         (else (hamming-distance-calc (cdr n) (cdr m) (+ d 1)))))
     (hamming-distance-calc n m 0))
 
