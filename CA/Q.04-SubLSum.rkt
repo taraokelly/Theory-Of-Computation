@@ -20,7 +20,7 @@ doesn’t matter. For example:
 '()
 |#
 
-|#
+#|
 The combinations function does all the hard work for us here. 
 https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket%2Flist..rkt%29._combinations%29%29. 
 It returns all the possible combinations of a given list in the form of a list of subsets,
@@ -29,7 +29,7 @@ everything in the original list always comes last in the list of subsets - so th
 easily removed from the loop building the final result. The loop acts as a filter only 
 incluing the subsets with the sum of 0. It end on the last subset and doesn't add it
 to the list being returned.
-#|
+|#
 
 (define (sublsum n)
     ; lsum function adds all elements in the list together.
