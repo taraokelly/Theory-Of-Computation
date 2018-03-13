@@ -1,4 +1,5 @@
 #lang racket
+(require "Test.rkt")
 
 #|
 CA: 30%
@@ -40,14 +41,6 @@ the answer is found.
         #f
         ; Counter starts at 2 - 0 and 1 don't need to be checked, and 1 will disrupt the results.
         (prime-loop n 2)))
-
-; Tester function.
-(define (test m n)
-  (if (equal? m n)
-    #t
-    #f
-    )
-)
 
 ; Execute testing.
 (test (decide-prime 2) #t)

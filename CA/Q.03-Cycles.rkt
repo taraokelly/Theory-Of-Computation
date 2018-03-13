@@ -1,4 +1,5 @@
 #lang racket
+(require "Test.rkt")
 
 #|
 CA: 30%
@@ -71,14 +72,6 @@ list was not being continuously built with each iteration.
             '()
             (cons (car n) (rcycle-build (cdr n)))))
     (cons (get-last n) (rcycle-build n)))
-
-; Tester function.
-(define (test m n)
-  (if (equal? m n)
-    #t
-    #f
-    )
-)
 
 ; Execute testing.
 (test (lcycle (list 1 2 3 4 5)) '(2 3 4 5 1))

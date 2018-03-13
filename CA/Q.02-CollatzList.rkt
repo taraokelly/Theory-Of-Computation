@@ -1,4 +1,5 @@
 #lang racket
+(require "Test.rkt")
 
 #|
 CA: 30%
@@ -50,18 +51,7 @@ ending the loop per iteration. The loop should end when the number n is 1.
     ; Check if odd.
     ((= (modulo n 2) 1)
       ; cons (3 * n) + 1 to the list.
-      (cons n (collatz-list (+ (* 3 n) 1)))
-    )
-  )
-)
-
-; Tester function.
-(define (test m n)
-  (if (equal? m n)
-    #t
-    #f
-    )
-)
+      (cons n (collatz-list (+ (* 3 n) 1))))))
 
 ; Execute testing.
 (test (collatz-list 5) '(5 16 8 4 2 1))
