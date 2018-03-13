@@ -43,12 +43,15 @@ First rcycle attempt - calculates list in one loop but doesn't return.
 (define (rcycle-build n a)
         (if (null? (cdr n))
             (cons (car n) a)
-            ((rcycle-build (cdr n) (cons (car n) a)))))
-    (rcycle-build n '())
+            (rcycle-build (cdr n) (cons (car n) a ))))
+    (rcycle-build n '()))
 
-I tried to find the end node and build the list in the
-same loop. This was unsuccessful as the function never returns the value because the 
-list was not being continuously built with each iteration. 
+I tried to find the end node and build the list in the same loop. This was unsuccessful as 
+the function returns the list backwards as the way it is built. To rememedy this would 
+destroy the integrity of the single list. 
+
+Instead, I then used two loops, one find the end node and 
+one to build the list, and then used cons to join the results of these functions.
 |#
 
 ; Separate with cdr and car - then loop to append each individual digit to list by 

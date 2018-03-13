@@ -19,3 +19,9 @@ doesn’t matter. For example:
 > (sublsum (list 1 2 3 4 5))
 '()
 |#
+
+(define (sublsum n)
+    (combinations n)
+)
+
+(sublsum (list 1 2 3 4 -5))
