@@ -40,9 +40,9 @@ Seems like a better solution but will only work on a binary string:
 
 (define (hamming-weight n)
     (define (hamming-weight-calc n c)
-    (cond
-        ((null? n) c)
-        (else (hamming-weight-calc (cdr n) (+ c (car n))))))
+    (if (null? n)
+        c
+        (hamming-weight-calc (cdr n) (+ c (car n)))))
     (hamming-weight-calc n 0))
 
 Works by adding the number itself to the counter each iteration. Will either better
