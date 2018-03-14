@@ -20,9 +20,10 @@ of x, y and z contain 1’s, and 0 otherwise. For example:
 #| 
 Not worrying about non-finite sized lists, maps can be used. 
 https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket%2Fprivate%2Fmap..rkt%29._map%29%29
-With a lambda expression iterating over the three maps, it sums the the nth number 
-from each and checks if the sum > 1, if not there cant be more than one 1 present 
-and 0 is mapped to the new list. If so the answer is 1.
+With a lambda expression iterating over the three maps, it sums the nth number 
+from each and checks if the sum > 1. If the sum is not > 1 - there can't be more 
+than one 1 present and 0 is mapped to the new list. If the sum is not > 1 - 1 is 
+mapped to the new list.
 |#
 
 (define (maj a b c)
