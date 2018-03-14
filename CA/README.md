@@ -6,9 +6,24 @@ The **questions along with their breakdowns and solutions** can be found in the 
 
 ## How to Run
 
+### With Visual Studio (Reccomended)
+
 + Download Racket if needed, download [here](http://racket-lang.org/download/). Don't forget to add racket to the environment variable path!
-+ Open current directory as a folder in Visual Studio Code. If needed, download [here](https://code.visualstudio.com/download).
++ Open current directory, CA, as a folder in Visual Studio Code. If needed, download [here](https://code.visualstudio.com/download).
 + To run a problem, e.g. Q.01-DecidePrime.rkt, open in the editor and make sure it is the selected tab. Next, press ```ctrl + shift + b``` to run.
+
+### From Terminal
+
++ Download Racket if needed, download [here](http://racket-lang.org/download/). Don't forget to add racket to the environment variable path!
++ Open the CA directory in terminal.
++ Enter ```racket Qx.-title.rkt``` to run.
+
+### DrRacket
+
++ Download Racket if needed, download [here](http://racket-lang.org/download/). DrRacket is a programming environment that is included.
++ Open DrRacket.
++ Open desired file.
++ Click run or press ```F5``` to run.
 
 ## Additional Features
 
