@@ -25,7 +25,7 @@ The other racket file found in this repository is the **Test.rkt** file. This fi
 )
 ```
 
-This test fucntion takes advantage of the it's generalized datatype support. These include strings, byte strings, pairs, mutable pairs, vectors, boxes, hash tables, and inspectable structures. Ref: https://docs.racket-lang.org/reference/booleans.html#%28def._%28%28quote._~23~25kernel%29._equal~3f%29%29
+This test fucntion takes advantage of the the function ```equal?``` and its generalized datatype support. These include strings, byte strings, pairs, mutable pairs, vectors, boxes, hash tables, and inspectable structures. Ref: https://docs.racket-lang.org/reference/booleans.html#%28def._%28%28quote._~23~25kernel%29._equal~3f%29%29
 
 -----
 
