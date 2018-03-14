@@ -1,8 +1,14 @@
 # Problem Sheets
 
-Continuous assessment assigned for the module [Theory of Algorithms](https://github.com/theory-of-algorithms/). This CA is responsoble for 30% of the overall grade.
+Continuous assessment assigned for the module [Theory of Algorithms](https://github.com/theory-of-algorithms/). This CA is responsible  for 30% of the overall grade.
 
-The **questions along with their breakdowns and solutions** can be found in the found in the separate files named: **_Qx.-title.rkt_**, e.g. question number one, about the function ```decide-prime```, can be located in __*Q.01-DecidePrime.rkt*__. The full specification of this assignment can be found [here](https://github.com/taraokelly/Theory-Of-Computation/blob/master/CA/problems.pdf).
+The **questions along with their breakdowns and solutions** can be found in the found in the separate files named: **_Qx.-title.rkt_**, e.g. question number one, about the function ```decide-prime```, is located in __*Q.01-DecidePrime.rkt*__. Easy read copies of the solutions can be found in the [solutions](#solutions) section of this README. The full specification of this assignment can be found [here](https://github.com/taraokelly/Theory-Of-Computation/blob/master/CA/problems.pdf).
+
+## Table of Contents
+
++ [How to Run](#how-to-run)
++ [Additional Features](#additional-features)
++ [Solutions](#solutions)
 
 ## How to Run
 
@@ -18,7 +24,7 @@ The **questions along with their breakdowns and solutions** can be found in the 
 + Open the CA directory in terminal.
 + Enter ```racket Qx.-title.rkt``` to run.
 
-### DrRacket
+### With DrRacket
 
 + Download Racket if needed, download [here](http://racket-lang.org/download/). DrRacket is a programming environment that is included.
 + Open DrRacket.
@@ -40,15 +46,15 @@ The other racket file found in this repository is the **Test.rkt** file. This fi
 )
 ```
 
-This test fucntion takes advantage of the function ```equal?``` and its generalized datatype support. These include strings, byte strings, pairs, mutable pairs, vectors, boxes, hash tables, and inspectable structures. Ref: https://docs.racket-lang.org/reference/booleans.html#%28def._%28%28quote._~23~25kernel%29._equal~3f%29%29
+This test function takes advantage of the function ```equal?``` and its generalized datatype support. These include strings, byte strings, pairs, mutable pairs, vectors, boxes, hash tables, and inspectable structures. Ref: https://docs.racket-lang.org/reference/booleans.html#%28def._%28%28quote._~23~25kernel%29._equal~3f%29%29
 
 ## Solutions
 
 ### Q.01
 
-Breaking this task down and examining what has to be done, it is to be noted that a "brute-force" algorithm is greedy exhaustive. In this case, every positive number less than the positive number *n* should be checked to see if it is a factor of *n*. If it is, then *n* must not be a prime number. This is because a prime number is a number where it's component factors can only consist of itself(*n*) and 1. Since it is only every number less than *n* being evaluated, *n* itself is never checked. The number 1 must also be excluded from the search. Every number is to be checked until the answer is found.
+Breaking this task down and examining what must be done, it is to be noted that a "brute-force" algorithm is greedy exhaustive. In this case, every positive number less than the positive number *n* should be checked to see if it is a factor of *n*. If it is, then *n* must not be a prime number. This is because a prime number is a number where it's component factors can only consist of itself(*n*) and 1. Since it is only every number less than *n* being evaluated, *n* itself is never checked. The number 1 should also be excluded from the search. Every number is to be checked until the answer is found.
 
-**Answer**:
+**_Answer_**:
 
 ```racket
 (define (decide-prime n)
@@ -73,11 +79,11 @@ Breaking this task down and examining what has to be done, it is to be noted tha
 
 The function collatz-list should take a positive integer and, using the formula given, return the corresponding list. The function collatz-list should loop using recursion, continuing (and passing in the new value *n* to be joined to *n* in the next iteration) or ending the loop per iteration. The loop should end when the number *n* is 1.
 
-**Answer**:
+**_Answer_**:
 
 ```racket
 (define (collatz-list n)
-  ; Cond allows more than 2 conditions (true or false), similar to and else if statement or 
+  ; Cond allows more than 2 conditions (true or false), similar to an else if statement or 
   ; switch statement. We need to check if n is odd, even or equal to 1 - so cond is optimal here.
   (cond
     ; Check if equal to 1.
@@ -101,7 +107,7 @@ The function collatz-list should take a positive integer and, using the formula 
 
 To create the lcycle function - the first digit can easily be separated using car and the rest can also be separated using cdr.
 
-**First attempt** (works but method uses append):
+**_First attempt_** (works but method uses append):
 
 ```racket
 (define (lcycle n)
@@ -116,7 +122,7 @@ To create the lcycle function - the first digit can easily be separated using ca
 Upon using the attempting to combine the pair (tail,head) using one cons operation, it
 became apparent that a recursive loop was required to build the single merged list.
 
-**Answer**:
+**_Answer_**:
 
 ```racket
 ; Separate with cdr and car - then loop to append each individual digit to list by 
@@ -131,10 +137,12 @@ became apparent that a recursive loop was required to build the single merged li
 
 ### rcycle
 
-To create the rcycle function - the last digit can be acheived by looping till the end 
-to find the number next to null. 
+To create the rcycle function - the last digit can be achieved by looping till the end 
+to find the number next to null. I tried to find the end node and build the list in the same loop. This was unsuccessful as 
+the function returns the list backwards as the way it is built. To remedy this would 
+destroy the integrity of the single list. 
 
-**First attempt**:
+**_First attempt_**:
 
 ```racket
 (define (rcycle-build n a)
@@ -143,14 +151,11 @@ to find the number next to null.
             (rcycle-build (cdr n) (cons (car n) a ))))
     (rcycle-build n '()))
 ```
-I tried to find the end node and build the list in the same loop. This was unsuccessful as 
-the function returns the list backwards as the way it is built. To rememedy this would 
-destroy the integrity of the single list. 
 
-Instead, I then used two loops, one find the end node and 
+Instead, I then used two loops, one to find the end node and 
 one to build the list, and then used cons to join the results of these functions.
 
-**Answer**:
+**_Answer_**:
 
 ```racket
 ; Loop to get last digit and loop through 0...n-1 to build list. Then cons last 
@@ -169,15 +174,15 @@ one to build the list, and then used cons to join the results of these functions
 
 ### Q.04
 
-The combinations function does all the hard work for us here. 
+The combinations function does all of the hard work for us here. 
 It returns all the possible combinations of a given list in the form of a list of subsets,
 including itself and an empty list. The empty list always comes first and the set of
 everything in the original list always comes last in the list of subsets - so these are
 easily removed from the loop that is building the final result. The loop acts as a filter only 
-incluing the subsets with the sum of 0. It ends on the last subset and doesn't add this last subset
+including the subsets with the sum of 0. It ends on the last subset and doesn't add this last subset
 to the list being returned.
 
-**Answer**:
+**_Answer_**:
 
 ```racket
 (define (sublsum n)
@@ -200,9 +205,9 @@ Ref: https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket
 The first attempt seems like a better solution but will only work on a binary string. Works by adding the number itself to the counter each iteration. Will either better
 1 or 0.
 However, the question says to "return the number of non-zero elements" and doesn't specify 
-anything about binary but only uses binary in the example.
+anything about only accepting binary but only uses binary in the example.
 
-**First attempt**:
+**_First attempt_**:
 
 ```racket
 (define (hamming-weight n)
@@ -213,15 +218,15 @@ anything about binary but only uses binary in the example.
     (hamming-weight-calc n 0))
 ```
 
-Similar to the last task a loop is required but holds a counter instead. Plan to use the cond function with three conditions:
+Moving onto a solution that will work for all whole numbers, a loop is required. Plan to use the cond function with three conditions:
 
-+ If arg1(input list) is null - then return counter (arg2) 
-+ If the first number is zero - use recursion to continue the loop passing in the 
-cdr of n and the unchanged counter
++ If *n* is null - then return the counter *c* 
++ If the first number or car of *n* is zero - use recursion to continue the loop passing in the 
+cdr of *n* and the unchanged counter
 + Else                        - use recursion to continue the loop passing in the 
-cdr of n and the incremented counter
+cdr of *n* and the incremented counter *c*
 
-**Answer**:
+**_Answer_**:
 
 ```racket
 (define (hamming-weight n)
@@ -231,6 +236,99 @@ cdr of n and the incremented counter
         ((= (car n) 0) (hamming-weight-calc (cdr n) c))
         (else (hamming-weight-calc (cdr n) (+ c 1)))))
     (hamming-weight-calc n 0))
+```
+
+### Q.06
+
+The following solution is a BETTER solution but assumes that the lists are of the same 
+length. However, the question doesn't specify that they are.
+
+**_First attempt_**:
+
+```racket
+(define (hamming-distance n m)
+    (define (hamming-distance-calc n m d)
+    (cond
+        ((null? n) d)
+        ((= (car n) (car m)) (hamming-distance-calc (cdr n) (cdr m) d))
+        (else (hamming-distance-calc (cdr n) (cdr m) (+ d 1)))))
+    (hamming-distance-calc n m 0))
+    
+```
+
+Again, similar to the last question - a loop with copies of the input and a counter 
+is used. The counter or distance will be incremented if the first number of each 
+list is the same. Using cond again:
+
++ Both lists (*n* amd *m*) are null - return *d* (distance) if both are null.
++ *n* is null - recursion while passing in cdr of non-null list *m* and an incremented *d*.
++ *m* is null - recursion while passing in cdr of non-null list *n* and an incremented *d*.
++ Car of both lists are the same - recursion while passing in cdr of both and a non-incremented *d*.
++ Else - mustn't be the same so recursion while passing in cdr of both lists and an incremented *d*.
+
+**_Answer_**:
+
+```racket
+(define (hamming-distance n m)
+    (define (hamming-distance-calc n m d)
+    (cond
+        ((and (null? n) (null? m)) d)
+        ((null? n) (hamming-distance-calc n (cdr m) (+ d 1)))
+        ((null? m) (hamming-distance-calc (cdr n) m (+ d 1)))
+        ((= (car n) (car m)) (hamming-distance-calc (cdr n) (cdr m) d))
+        (else (hamming-distance-calc (cdr n) (cdr m) (+ d 1)))))
+    (hamming-distance-calc n m 0))
+```
+
+### Q.07
+
+Not worrying about non-finite sized lists, maps can be used. 
+With a lambda expression iterating over the three maps, it sums the *n*th number 
+from each and checks if the sum > 1. If the sum is not > 1 - there can't be more 
+than one 1 present and 0 is mapped to the new list. If the sum is not > 1 - 1 is 
+mapped to the new list.
+
+**_Answer_**:
+
+```racket
+(define (maj a b c)
+    (map (lambda (n1 n2 n3)
+         (if(> (+ n1 n2 n3) 1) 1 0))
+       a b c))
+```
+
+Ref: [https://docs.racket-lang.org/reference/pairs.html](https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket%2Fprivate%2Fmap..rkt%29._map%29%29) 
+
+### Q.08
+
+Again, we don't have to worry about non-finite sized lists and non-binary. With a map iterating 
+over the three maps (*x*, *y* and *z*) using a lambda expression, it checks if the nth number of *x* is 
+equal to 1. If it is return the *n*th number of *z*, and if it is not the *n*th number *y*.
+
+**_Answer_**:
+
+```racket
+(define (chse x y z)
+    (map (lambda (n1 n2 n3)
+         (if(= n1 1) n2 n3))
+       x y z))
+```
+
+### Q.09
+
+Implemented similarily to the last two tasks, the sod2 function uses different logic in 
+its if statement. It checks if the sum of the *n*th number of *x*, *y* and *z* is divisible by 
+2. If it is, the answer must be even, and 0 is mapped to the *n*th spot in the resulting 
+list. If it is not divisible by 2, the answer must be odd, and 1 is mapped to the *n*th 
+spot in the resulting list.  
+
+**_Answer_**:
+
+```racket
+(define (sod2 x y z)
+    (map (lambda (n1 n2 n3)
+         (if(= (modulo (+ n1 n2 n3) 2) 0) 0 1))
+       x y z))
 ```
 
 -----
