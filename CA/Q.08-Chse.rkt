@@ -18,7 +18,7 @@ the positions where x is 1 and the elements of z otherwise. For example:
 |#
 
 #| 
-Again we don't have to worry about non-finite sized lists and binary. With a map iterating 
+Again we don't have to worry about non-finite sized lists and non-binary. With a map iterating 
 over the three maps (x, y and z) with a lambda expression, checks if the nth number x is 
 equal to 1, if it is return the the nth number of z, and if not the nth number y.
 |#
