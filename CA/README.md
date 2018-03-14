@@ -1,4 +1,4 @@
-# Problem Sheets
+# CA
 
 Continuous assessment assigned for the module [Theory of Algorithms](https://github.com/theory-of-algorithms/). This CA is responsible  for 30% of the overall grade.
 
