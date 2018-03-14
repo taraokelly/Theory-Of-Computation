@@ -256,8 +256,7 @@ length. However, the question doesn't specify that they are.
     
 ```
 
-Again, similar to the last question - a loop with copies of the input and a counter 
-is used. The counter or distance will be incremented if the first number of each 
+In regards to a solution that will accept lists of differung length, a looping function with copies of the input and a counter starting from 0 can be used. The counter or distance will be incremented if the first number of each 
 list is the same. Using cond again:
 
 + Both lists (*n* amd *m*) are null - return *d* (distance) if both are null.
