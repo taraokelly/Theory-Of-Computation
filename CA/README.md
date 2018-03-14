@@ -6,6 +6,7 @@ The **questions along with their breakdowns and solutions** can be found in the 
 
 ## How to Run
 
++ Download Racket if needed, download [here](http://racket-lang.org/download/). Don't forget to add racket to the environment variable path!
 + Open current directory as a folder in Visual Studio Code. If needed, download [here](https://code.visualstudio.com/download).
 + To run a problem, e.g. Q.01-DecidePrime.rkt, open in the editor and make sure it is the selected tab. Next, press ```ctrl + shift + b``` to run.
 
