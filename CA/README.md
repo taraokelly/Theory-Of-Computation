@@ -6,7 +6,7 @@ The **questions along with their breakdowns and solutions** can be found in the 
 
 ## How to Run
 
-### With Visual Studio (Reccomended)
+### With Visual Studio (Recommended)
 
 + Download Racket if needed, download [here](http://racket-lang.org/download/). Don't forget to add racket to the environment variable path!
 + Open current directory, CA, as a folder in Visual Studio Code. If needed, download [here](https://code.visualstudio.com/download).
