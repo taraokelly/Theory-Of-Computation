@@ -2,7 +2,7 @@
 
 Continuous assessment assigned for the module [Theory of Algorithms](https://github.com/theory-of-algorithms/). This CA is responsible  for 30% of the overall grade.
 
-The **questions along with their breakdowns and solutions** can be found in the found in the separate files named: **_Qx.-title.rkt_**, e.g. question number one, about the function ```decide-prime```, is located in __*Q.01-DecidePrime.rkt*__. Easy read copies of the solutions can be found in the [solutions](#solutions) section of this README. The full specification of this assignment can be found [here](https://github.com/taraokelly/Theory-Of-Computation/blob/master/CA/problems.pdf).
+The questions along with their breakdowns and solutions can be found in the found in the separate files named: **_Qx.-title.rkt_**, e.g. question number one, about the function ```decide-prime```, is located in __*Q.01-DecidePrime.rkt*__. Easy read copies of the solutions can be found in the [solutions](#solutions) section of this README. The full specification of this assignment can be found [here](https://github.com/taraokelly/Theory-Of-Computation/blob/master/CA/problems.pdf).
 
 ## Table of Contents
 
