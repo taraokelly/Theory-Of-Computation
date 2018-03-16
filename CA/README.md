@@ -145,7 +145,8 @@ destroy the integrity of the single list.
 **_First attempt_**:
 
 ```racket
-(define (rcycle-build n a)
+(define (rycle n)
+    (define (rcycle-build n a)
         (if (null? (cdr n))
             (cons (car n) a)
             (rcycle-build (cdr n) (cons (car n) a ))))
