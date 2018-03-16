@@ -35,7 +35,7 @@ The questions along with their breakdowns and solutions can be found in the foun
 
 ### Test Racket
 
-The other racket file found in this repository is the **Test.rkt** file. This file held a generalized function that was used as an import to test the individual problems/questions in the separate files.
+The other racket file found in this repository is the **_Test.rkt_** file. This file held a generalized function that was used as an import to test the individual problems/questions in the separate files.
 
 ```racket
 (define (test m n)
