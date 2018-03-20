@@ -96,7 +96,7 @@ The function collatz-list should take a positive integer and, using the formula 
       (cons n (collatz-list (/ n 2)))
     )
     ; Check if odd.
-    ((= (modulo n 2) 1)
+    (else
       ; cons (3 * n) + 1 to the list.
       (cons n (collatz-list (+ (* 3 n) 1))))))
 ```
