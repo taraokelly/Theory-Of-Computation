@@ -49,7 +49,7 @@ ending the loop per iteration. The loop should end when the number n is 1.
       (cons n (collatz-list (/ n 2)))
     )
     ; Check if odd.
-    ((= (modulo n 2) 1)
+    (else
       ; cons (3 * n) + 1 to the list.
       (cons n (collatz-list (+ (* 3 n) 1))))))
 
