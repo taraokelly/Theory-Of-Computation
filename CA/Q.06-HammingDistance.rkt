@@ -78,10 +78,10 @@ incremented arg3(d).
 FINAL ATTEMPT:
 ---------------
 
-Like Q.5, the following solution are optimized versions off the previous attempt. I updated these 
-upon realising that the inner function and counter to keep track of the hamming weight was 
-not the most sophisticated means to sum up the result. Instead the result would be 
-continuously built adding either 0 or 1 per iteration.
+Like Q.5, the following solution is an optimized version off the previous attempt. 
+I updated it upon realising that the inner function and counter to keep track of the 
+hamming weight was not the most sophisticated means to sum up the result. Instead 
+the result would be continuously built adding either 0 or 1 per iteration.
 |#
 
 (define (hamming-distance n m)
