@@ -133,7 +133,7 @@ became apparent that a recursive loop was required to build the single merged li
         (if (null? n)
             (cons a '())
             (cons (car n) (lcycle-build (cdr n) a))))
-    (lcycle-build (cdr n) (car n)))
+    (if (null? n) '() (lcycle-build (cdr n) (car n))))
 ```
 
 ### rcycle
@@ -171,7 +171,7 @@ one to build the list, and then used cons to join the results of these functions
         (if (null? (cdr n))
             '()
             (cons (car n) (rcycle-build (cdr n)))))
-    (cons (get-last n) (rcycle-build n)))
+    (if (null? n) '() (cons (get-last n) (rcycle-build n))))
 ```
 
 ### Q.04
