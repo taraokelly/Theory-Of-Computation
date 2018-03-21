@@ -60,7 +60,8 @@ Breaking this task down and examining what must be done, it is to be noted that 
 (define (decide-prime n)
       (define (prime-loop n m)
       ; Check if m is equal to n - m acts as a counter, starting from 2 -> n.
-      ; If m has reached n without finding a component factor of n and returning false, n must be a prime number.
+      ; If m has reached n without finding a component factor of n and returning false, 
+      ; then must be a prime number.
       (if (= m n)
           #t
           ; If the modulus is equal to 0 then, m divides equally into n and therfore must be a factor of n.  
@@ -241,7 +242,7 @@ cdr of *n* and the incremented counter *c*
 
 The following solutions are optimized versions off the previous attempts. I updated 
 these upon realising that the inner function and counter to keep track of the 
-hamming weight was not the most sophisticated means to sum up the result. Instead the result would be continuously built adding either 0 or 1 
+hamming weight was not the most sophisticated means to sum up the result. Instead the result would be continuously built, adding either 0 or 1 
 per iteration. I began with applying this to the binary only version.
 
 **_Third attempt_**:
@@ -266,7 +267,7 @@ I then moved on to updating the better solution.
 
 ### Q.06
 
-The following solution is a BETTER solution but assumes that the lists are of the same 
+The following solution is a BETTER solution than the next but assumes that the lists are of the same 
 length. However, the question doesn't specify that they are.
 
 **_First attempt_**:
@@ -282,7 +283,7 @@ length. However, the question doesn't specify that they are.
     
 ```
 
-In regards to a solution that will accept lists of differung length, a looping function with copies of the input and a counter starting from 0 can be used. The counter or distance will be incremented if the first number of each 
+In regards to a solution that will accept lists of differing length, a looping function with copies of the input and a counter starting from 0 can be used. The counter or distance will be incremented if the first number of each 
 list is the same. Using cond again:
 
 + Both lists (*n* amd *m*) are null - return *d* (distance) if both are null.
@@ -291,7 +292,7 @@ list is the same. Using cond again:
 + Car of both lists are the same - recursion while passing in cdr of both and a non-incremented *d*.
 + Else - mustn't be the same so recursion while passing in cdr of both lists and an incremented *d*.
 
-**_Answer_**:
+**_Second attempt_**:
 
 ```racket
 (define (hamming-distance n m)
@@ -303,6 +304,23 @@ list is the same. Using cond again:
         ((= (car n) (car m)) (hamming-distance-calc (cdr n) (cdr m) d))
         (else (hamming-distance-calc (cdr n) (cdr m) (+ d 1)))))
     (hamming-distance-calc n m 0))
+```
+
+Like Q.5, the following solution is an optimized version off the previous attempt. I updated the last solution 
+upon realising that the inner function and counter to keep track of the hamming weight was 
+not the most sophisticated means to sum up the result. Instead the result would be 
+continuously built, adding either 0 or 1 per iteration.
+
+**_Answer_**:
+
+```racket 
+(define (hamming-distance n m)
+    (cond
+        ((and (null? n) (null? m)) 0)
+        ((null? n) (+ 1 (hamming-distance n (cdr m))))
+        ((null? m) (+ 1 (hamming-distance (cdr n) m)))
+        ((= (car n) (car m)) (+ 0 (hamming-distance (cdr n) (cdr m))))
+        (else (+ 1 (hamming-distance (cdr n) (cdr m))))))
 ```
 
 ### Q.07
