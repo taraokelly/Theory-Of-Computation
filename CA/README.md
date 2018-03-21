@@ -227,7 +227,7 @@ cdr of *n* and the unchanged counter
 + Else                        - use recursion to continue the loop passing in the 
 cdr of *n* and the incremented counter *c*
 
-**_Answer_**:
+**_Second attempt_**:
 
 ```racket
 (define (hamming-weight n)
@@ -237,6 +237,31 @@ cdr of *n* and the incremented counter *c*
         ((= (car n) 0) (hamming-weight-calc (cdr n) c))
         (else (hamming-weight-calc (cdr n) (+ c 1)))))
     (hamming-weight-calc n 0))
+```
+
+The following solutions are optimized versions off the previous attempts. I updated 
+these upon realising that the inner function and counter to keep track of the 
+hamming weight was unnecessary. Instead the result would be continuously built adding either 0 or 1 
+per iteration. I began with applying this to the binary only version.
+
+**_Third attempt_**:
+
+```racket 
+(define (hamming-weight n)
+    (if(null? n) 
+        0
+        (+ (car n) (hamming-weight (cdr n)))))
+```
+I then moved on to updating the better solution.
+
+**_Answer_**:
+
+```racket 
+(define (hamming-weight n)
+    (cond
+        ((null? n) 0)
+        ((= (car n) 0) (+ 0 (hamming-weight (cdr n))))
+        (else (+ 1 (hamming-weight (cdr n))))))
 ```
 
 ### Q.06
