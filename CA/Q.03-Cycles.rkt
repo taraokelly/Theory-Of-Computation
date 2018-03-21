@@ -61,7 +61,7 @@ one to build the list, and then used cons to join the results of these functions
         (if (null? n)
             (cons a '())
             (cons (car n) (lcycle-build (cdr n) a))))
-    (lcycle-build (cdr n) (car n)))
+    (if (null? n) '() (lcycle-build (cdr n) (car n))))
 
 ; Loop to get last digit and loop through 0...n-1 to build list. Then cons last 
 ; digit with the built list.
@@ -74,8 +74,10 @@ one to build the list, and then used cons to join the results of these functions
         (if (null? (cdr n))
             '()
             (cons (car n) (rcycle-build (cdr n)))))
-    (cons (get-last n) (rcycle-build n)))
+    (if (null? n) '() (cons (get-last n) (rcycle-build n))))
 
 ; Execute testing.
 (test (lcycle (list 1 2 3 4 5)) '(2 3 4 5 1))
 (test (rcycle (list 1 2 3 4 5)) '(5 1 2 3 4))
+(test (lcycle '()) '())
+(test (rcycle '()) '())
