@@ -54,10 +54,10 @@ iteration. So this will either be 0 or 1.
 FINAL ATTEMPTS:
 ---------------
 
-The following solutions are optimized versions off the previous attempts. I updated 
-these upon realising that the inner function and counter to keep track of the 
-hamming weight. Instead the result would be continuously built adding either 0 or 1 
-per iteration.
+The following solutions are optimized versions off the previous attempts. I updated these 
+upon realising that the inner function and counter to keep track of the hamming weight was 
+not the most sophisticated means to sum up the result. Instead the result would be 
+continuously built adding either 0 or 1 per iteration.
 
 Binary only version of the solution:
 
