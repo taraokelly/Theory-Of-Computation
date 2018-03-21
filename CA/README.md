@@ -241,7 +241,7 @@ cdr of *n* and the incremented counter *c*
 
 The following solutions are optimized versions off the previous attempts. I updated 
 these upon realising that the inner function and counter to keep track of the 
-hamming weight was unnecessary. Instead the result would be continuously built adding either 0 or 1 
+hamming weight was not the most sophisticated means to sum up the result. Instead the result would be continuously built adding either 0 or 1 
 per iteration. I began with applying this to the binary only version.
 
 **_Third attempt_**:
