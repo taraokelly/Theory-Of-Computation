@@ -374,6 +374,56 @@ spot in the resulting list.
        x y z))
 ```
 
+### Q.10
+
+This task requires the squared distance between each of the *i*th pair elements to be 
+summed together to create the result. Using maps again, the map finds the distance 
+between both elements and multiplies it by itself. This number is mapped the a new 
+list. The returned list is then looped over recursively, building the sum of every
+element in the list.
+
+**_First attempt_**:
+
+```racket
+(define (lstq m l)
+    (define (lsum l)
+            (if (null? l) 0 (+ (car l) (lsum (cdr l)))))
+    (lsum (map (lambda (i1 i2)
+         (* (- i1 i2) (- i1 i2)))
+       m l)))
+```
+
+The above solution works well bar the minor issue that it unnecessarily finds the 
+distance between each of the *i*th pair elements twice (```(* (- i1 i2) (- i1 i2))```). This could be easily 
+corrected, another function ```square``` is added to find the square root. As a result 
+the distance need only be calculated once.
+
+**_Second attempt_**:
+
+```racket
+(define (lstq m l)
+    (define (lsum l)
+            (if (null? l) 0 (+ (car l) (lsum (cdr l)))))
+    (define (square n) (* n n))
+    (lsum (map (lambda (i1 i2)
+         (square (- i1 i2)))
+       m l)))
+```
+
+The separate ```square``` function can only be called once, so I thought it simpler to convert
+it into a lambda  expression.
+
+**_Answer_**:
+
+```racket
+(define (lstq m l)
+    (define (lsum l)
+            (if (null? l) 0 (+ (car l) (lsum (cdr l)))))
+    (lsum (map (lambda (i1 i2)
+         ((lambda (x) (* x x)) (- i1 i2)))
+       m l)))
+```
+
 -----
 
 __*Tara O'Kelly - G00322214@gmit.ie*__
