@@ -23,18 +23,54 @@ for all i. Then add all of those to get d. For example:
 |#
 
 #| 
-This task requires the squared distance between the each of the ith pair elements to be 
+This task requires the squared distance between each of the ith pair elements to be 
 summed together to create the result. Using maps again, the map finds the distance 
 between both elements and multiplies it by itself. This number is mapped the a new 
 list. The returned list is then looped over recursively, building the sum of every
 element in the list.
-|#
+
+--------------
+First Attempt
+--------------
 
 (define (lstq m l)
     (define (lsum l)
             (if (null? l) 0 (+ (car l) (lsum (cdr l)))))
     (lsum (map (lambda (i1 i2)
          (* (- i1 i2) (- i1 i2)))
+       m l)))
+
+--------------
+Second Attempt
+--------------
+
+The above solution works well bar the minor issue that it unnecessarily finds the 
+distance between each of the ith pair elements twice. This could be easily 
+corrected, another function "square" is added to find the square root. As a result 
+the distance need only be calculated once.
+
+(define (lstq m l)
+    (define (lsum l)
+            (if (null? l) 0 (+ (car l) (lsum (cdr l)))))
+    (define (square n) (* n n))
+    (lsum (map (lambda (i1 i2)
+         (square (- i1 i2)))
+       m l)))
+
+--------------
+Third Attempt
+--------------
+
+The seperate "square" function can only be called once, so I thought it simpler to convert
+it into a lamba expression.
+
+|#
+
+(define (lstq m l)
+    (define (lsum l)
+            (if (null? l) 0 (+ (car l) (lsum (cdr l)))))
+    (lsum (map (lambda (i1 i2)
+         ((lambda (x) (* x x)) (- i1 i2)))
        m l)))
 
 (test (lstq (list 4.5 5.1 6.2 7.8) (list 1.1 -0.1 6.1 3.8)) 54.61)
