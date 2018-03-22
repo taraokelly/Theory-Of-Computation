@@ -61,8 +61,8 @@ the distance need only be calculated once.
 Third Attempt
 --------------
 
-The seperate "square" function can only be called once, so I thought it simpler to convert
-it into a lamba expression.
+The separate "square" function can only be called once, so I thought it simpler to convert
+it into a lambda expression.
 
 |#
 
