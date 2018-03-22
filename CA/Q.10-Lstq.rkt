@@ -8,7 +8,7 @@ Theory of Algorithms, Software Development, Fourth Year, GMIT.
 |#
 
 #| 
-Q.9)
+Q.10
 
 Write a function lstq in Racket that takes as arguments two lists l and m of equal
 length and containing numbers. It should return d, the distance given by the sum of
