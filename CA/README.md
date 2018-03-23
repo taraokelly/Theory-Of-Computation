@@ -394,9 +394,9 @@ element in the list.
 ```
 
 The above solution works well bar the minor issue that it unnecessarily finds the 
-distance between each of the *i*th pair elements twice (```(* (- i1 i2) (- i1 i2))```). This could be easily 
-corrected, another function ```square``` is added to find the square root. As a result 
-the distance need only be calculated once.
+distance between each of the *i*th pair elements twice - ```(* (- i1 i2) (- i1 i2))```. This could be easily 
+corrected, I add another function, ```square```, to find the square root. As a result, 
+the distance is only calculated once.
 
 **_Second attempt_**:
 
